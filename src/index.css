@@ -1,13 +1,75 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  overflow-x: hidden;
+}
+
+/* Form */
+
+.bg-home {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(./image/art-liquid.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bg-home .wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .bg-home .wrapper {
+    -webkit-backdrop-filter: blur(35px);
+    backdrop-filter: blur(35px);
+    background-color: rgba(255, 255, 255, 0.119);
+  }
+}
+.bg-home .wrapper .content {
+  max-width: 1000px;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.bg-home .wrapper .content > form {
+  margin-bottom: 2em;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.537);
+  padding: 20px;
+}
+
+@media (max-width: 450px) {
+  .bg-home .wrapper .content > form {
+    width: 80%;
+  }
+  
+  .psignin {
+    text-align: center;
+    padding: 5%;
+  }
+}
+
+@media (max-width: 400px) {
+  .bg-home .wrapper .content {
+    padding: 0 5%;
+  }
+
+
+  .MuiToolbar-root {
+    flex-direction: column;
+    padding: 20px;
+    line-height: 50px;
+  }
 }
